@@ -30,7 +30,7 @@ import torchvision
 from torch.cuda import amp
 from tqdm import tqdm
 
-FILE = Path(__file__).resolve()
+FILE = Path('data/images/archive/car-segmentation/images').resolve()
 ROOT = FILE.parents[1]  # YOLOv5 root directory
 if str(ROOT) not in sys.path:
     sys.path.append(str(ROOT))  # add ROOT to PATH
@@ -47,7 +47,7 @@ from utils.general import (
     WorkingDirectory,
     check_git_info,
     check_git_status,
-    check_requirements,
+    # check_requirements,
     colorstr,
     download,
     increment_path,
@@ -341,7 +341,7 @@ def main(opt):
     if RANK in {-1, 0}:
         print_args(vars(opt))
         check_git_status()
-        check_requirements(ROOT / "requirements.txt")
+        # check_requirements(ROOT / "requirements.txt")
 
     # DDP mode
     device = select_device(opt.device, batch_size=opt.batch_size)

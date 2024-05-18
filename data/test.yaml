@@ -1,0 +1,7 @@
+list: /path1/images
+val: /data/images/valid
+test: /data/images/test
+
+nc: 1
+
+names: ['wheat']
